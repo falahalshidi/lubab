@@ -47,7 +47,7 @@ export default function ParentDashboardPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">جاري التحميل...</p>
         </div>
       </div>
@@ -193,45 +193,45 @@ export default function ParentDashboardPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">لوحة تحكم ولي الأمر</h1>
-          <p className="text-gray-600">{grade5.name} - متابعة أداء الطالب</p>
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">لوحة تحكم ولي الأمر</h1>
+          <p className="text-sm sm:text-base text-gray-600">{grade5.name} - متابعة أداء الطالب</p>
         </div>
 
         {/* Overall Statistics */}
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl p-6 text-white shadow-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="bg-gray-900 rounded-xl p-4 sm:p-6 text-white shadow-lg">
             <div className="flex items-center justify-between mb-2">
-              <BarChart3 className="w-8 h-8" />
+              <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <div className="text-3xl font-bold mb-1">{overallProgress}%</div>
-            <p className="text-blue-100 text-sm">التقدم الإجمالي</p>
+            <div className="text-2xl sm:text-3xl font-bold mb-1">{overallProgress}%</div>
+            <p className="text-gray-300 text-xs sm:text-sm">التقدم الإجمالي</p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="bg-gray-700 rounded-xl p-4 sm:p-6 text-white shadow-lg">
             <div className="flex items-center justify-between mb-2">
-              <Award className="w-8 h-8" />
+              <Award className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <div className="text-3xl font-bold mb-1">{averageScore}%</div>
-            <p className="text-green-100 text-sm">متوسط الدرجات</p>
+            <div className="text-2xl sm:text-3xl font-bold mb-1">{averageScore}%</div>
+            <p className="text-gray-300 text-xs sm:text-sm">متوسط الدرجات</p>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 text-white shadow-lg">
             <div className="flex items-center justify-between mb-2">
-              <BookOpen className="w-8 h-8" />
+              <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <div className="text-3xl font-bold mb-1">{completedLessons}</div>
-            <p className="text-purple-100 text-sm">دروس مكتملة</p>
+            <div className="text-2xl sm:text-3xl font-bold mb-1">{completedLessons}</div>
+            <p className="text-gray-300 text-xs sm:text-sm">دروس مكتملة</p>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-white shadow-lg">
+          <div className="bg-gray-600 rounded-xl p-4 sm:p-6 text-white shadow-lg">
             <div className="flex items-center justify-between mb-2">
-              <CheckCircle className="w-8 h-8" />
+              <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
-            <div className="text-3xl font-bold mb-1">{quizResults.length}</div>
-            <p className="text-orange-100 text-sm">اختبارات مكتملة</p>
+            <div className="text-2xl sm:text-3xl font-bold mb-1">{quizResults.length}</div>
+            <p className="text-gray-300 text-xs sm:text-sm">اختبارات مكتملة</p>
           </div>
         </div>
 
@@ -245,20 +245,20 @@ export default function ParentDashboardPage() {
                   key={alert.id}
                   className={`p-4 rounded-lg border-2 ${
                     alert.type === 'warning'
-                      ? 'bg-orange-50 border-orange-200'
+                      ? 'bg-gray-50 border-gray-200'
                       : alert.type === 'success'
-                      ? 'bg-green-50 border-green-200'
-                      : 'bg-blue-50 border-blue-200'
+                      ? 'bg-gray-50 border-gray-200'
+                      : 'bg-gray-50 border-gray-200'
                   }`}
                 >
                   <div className="flex items-start space-x-3 space-x-reverse">
                     <AlertCircle
                       className={`w-6 h-6 flex-shrink-0 mt-0.5 ${
                         alert.type === 'warning'
-                          ? 'text-orange-600'
+                          ? 'text-gray-600'
                           : alert.type === 'success'
-                          ? 'text-green-600'
-                          : 'text-blue-600'
+                          ? 'text-gray-600'
+                          : 'text-gray-600'
                       }`}
                     />
                     <div className="flex-1">
@@ -277,10 +277,10 @@ export default function ParentDashboardPage() {
           </div>
         )}
 
-        <div className="grid lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {/* Subjects Progress */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">التقدم في المواد</h2>
+          <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">التقدم في المواد</h2>
             <div className="space-y-6">
               {subjectsSummary.map((subject) => (
                 <div key={subject.subjectId}>
@@ -295,7 +295,7 @@ export default function ParentDashboardPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-blue-600">
+                      <div className="text-xl sm:text-2xl font-bold text-gray-900">
                         {subject.averageScore > 0 ? `${subject.averageScore}%` : '-'}
                       </div>
                       <p className="text-xs text-gray-500">متوسط الدرجات</p>
@@ -303,7 +303,7 @@ export default function ParentDashboardPage() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full h-2 transition-all duration-500"
+                      className="bg-gray-900 rounded-full h-2 transition-all duration-500"
                       style={{ width: `${subject.progress}%` }}
                     ></div>
                   </div>
@@ -313,8 +313,8 @@ export default function ParentDashboardPage() {
           </div>
 
           {/* Recent Activity */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">آخر الأنشطة</h2>
+          <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">آخر الأنشطة</h2>
             {recentActivity.length > 0 ? (
               <div className="space-y-4">
                 {recentActivity.map((activity) => {
@@ -333,9 +333,9 @@ export default function ParentDashboardPage() {
                         </p>
                       </div>
                       {activity.type === 'lesson_completed' ? (
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0" />
                       ) : (
-                        <Award className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <Award className="w-5 h-5 text-gray-900 flex-shrink-0" />
                       )}
                     </div>
                   );
@@ -351,46 +351,46 @@ export default function ParentDashboardPage() {
         </div>
 
         {/* Weak Points & Strengths */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
           {/* Weak Points */}
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
             <div className="flex items-center space-x-2 space-x-reverse mb-4">
-              <AlertCircle className="w-6 h-6 text-orange-600" />
-              <h2 className="text-2xl font-bold text-gray-900">نقاط الضعف</h2>
+              <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">نقاط الضعف</h2>
             </div>
             {analysis.weakPoints.length > 0 ? (
               <div className="space-y-2">
                 {analysis.weakPoints.slice(0, 5).map((point: string, index: number) => (
                   <div
                     key={index}
-                    className="p-3 bg-orange-50 border border-orange-200 rounded-lg"
+                    className="p-3 bg-gray-50 border border-gray-200 rounded-lg"
                   >
-                    <p className="text-sm text-orange-800">{point}</p>
+                    <p className="text-sm text-gray-800">{point}</p>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="text-center py-4">
-                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="w-12 h-12 text-gray-900 mx-auto mb-2" />
                 <p className="text-gray-600">لا توجد نقاط ضعف حالياً</p>
               </div>
             )}
           </div>
 
           {/* Strengths */}
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-md p-4 sm:p-6">
             <div className="flex items-center space-x-2 space-x-reverse mb-4">
-              <TrendingUp className="w-6 h-6 text-green-600" />
-              <h2 className="text-2xl font-bold text-gray-900">نقاط القوة</h2>
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">نقاط القوة</h2>
             </div>
             {analysis.strengths.length > 0 ? (
               <div className="space-y-2">
                 {analysis.strengths.map((strength: string, index: number) => (
                   <div
                     key={index}
-                    className="p-3 bg-green-50 border border-green-200 rounded-lg"
+                    className="p-3 bg-gray-50 border border-gray-200 rounded-lg"
                   >
-                    <p className="text-sm text-green-800">{strength}</p>
+                    <p className="text-sm text-gray-800">{strength}</p>
                   </div>
                 ))}
               </div>
@@ -404,9 +404,9 @@ export default function ParentDashboardPage() {
 
         {/* Recommendations */}
         {analysis.recommendations.length > 0 && (
-          <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h2 className="text-xl font-bold text-blue-900 mb-4">توصيات</h2>
-            <ul className="list-disc list-inside space-y-2 text-blue-800">
+          <div className="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-4 sm:p-6">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">توصيات</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
               {analysis.recommendations.map((rec: string, index: number) => (
                 <li key={index}>{rec}</li>
               ))}
