@@ -125,7 +125,7 @@ export default function SubjectPage() {
               return (
                 <div
                   key={lesson.id}
-                  className={`p-4 sm:p-6 hover:bg-gray-50 transition-colors ${
+                  className={`p-4 sm:p-6 hover:bg-gray-50 active:bg-gray-100 transition-colors ${
                     isLocked ? 'opacity-60' : ''
                   }`}
                 >
@@ -198,7 +198,7 @@ export default function SubjectPage() {
                       ) : (
                         <Link
                           href={`/lesson/${lesson.id}`}
-                          className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 space-x-reverse font-semibold text-sm sm:text-base"
+                          className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 space-x-reverse font-semibold text-sm sm:text-base touch-manipulation"
                         >
                           <span>{isCompleted ? 'مراجعة' : 'ابدأ'}</span>
                           <ArrowRight className="w-4 h-4 rotate-180" />

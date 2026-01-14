@@ -81,7 +81,7 @@ export default function NameSetupPage() {
             <button
               type="submit"
               disabled={!name.trim()}
-              className="w-full py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 space-x-reverse text-base sm:text-lg"
+              className="w-full py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 space-x-reverse text-base sm:text-lg touch-manipulation"
             >
               <span>متابعة</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 rotate-180" />

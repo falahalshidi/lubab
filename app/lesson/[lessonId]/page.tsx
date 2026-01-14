@@ -175,7 +175,7 @@ export default function LessonPage() {
                   </div>
                   <button
                     onClick={markLessonComplete}
-                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold"
+                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl hover:from-green-700 hover:to-emerald-700 active:from-green-800 active:to-emerald-800 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold touch-manipulation"
                   >
                     <CheckCircle className="w-5 h-5" />
                     <span>تم الإكمال</span>
@@ -187,7 +187,7 @@ export default function LessonPage() {
             {/* Start Quiz Button */}
             <Link
               href={`/quiz/${lesson.quizId}`}
-              className="block w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2 space-x-reverse font-bold text-lg"
+              className="block w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center rounded-xl hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2 space-x-reverse font-bold text-lg touch-manipulation"
             >
               <Play className="w-5 h-5" />
               <span className="text-lg font-semibold">ابدأ الاختبار</span>

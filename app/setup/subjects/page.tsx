@@ -109,10 +109,10 @@ export default function SubjectsSetupPage() {
                 <button
                   key={subject.id}
                   onClick={() => toggleSubject(subject.id)}
-                  className={`relative p-4 sm:p-6 rounded-xl border-2 transition-all transform hover:scale-[1.02] ${
+                  className={`relative p-4 sm:p-6 rounded-xl border-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] touch-manipulation ${
                     isSelected
                       ? 'bg-gray-900 text-white border-gray-900 shadow-xl'
-                      : 'bg-white text-gray-900 border-gray-300 hover:border-gray-900 shadow-md hover:shadow-lg'
+                      : 'bg-white text-gray-900 border-gray-300 hover:border-gray-900 active:border-gray-900 shadow-md hover:shadow-lg'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-3">
@@ -161,7 +161,7 @@ export default function SubjectsSetupPage() {
           <button
             onClick={handleComplete}
             disabled={selectedSubjects.length === 0}
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse mx-auto text-base sm:text-lg"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse mx-auto text-base sm:text-lg touch-manipulation"
           >
             <span>إكمال الإعداد</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 rotate-180" />

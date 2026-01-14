@@ -82,11 +82,11 @@ export default function GradeSetupPage() {
                 key={grade.id}
                 onClick={() => handleSelect(grade.id)}
                 disabled={!isAvailable}
-                className={`relative p-6 sm:p-8 rounded-xl sm:rounded-2xl border-2 transition-all transform hover:scale-[1.02] ${
+                className={`relative p-6 sm:p-8 rounded-xl sm:rounded-2xl border-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] touch-manipulation ${
                   isAvailable
                     ? isSelected
                       ? 'bg-gray-900 text-white border-gray-900 shadow-xl'
-                      : 'bg-white text-gray-900 border-gray-300 hover:border-gray-900 shadow-md hover:shadow-lg'
+                      : 'bg-white text-gray-900 border-gray-300 hover:border-gray-900 active:border-gray-900 shadow-md hover:shadow-lg'
                     : 'bg-gray-100 text-gray-400 border-gray-300 cursor-not-allowed opacity-60'
                 }`}
               >

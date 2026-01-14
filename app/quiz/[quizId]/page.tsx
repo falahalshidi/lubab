@@ -398,10 +398,10 @@ export default function QuizPage() {
                 <button
                   key={index}
                   onClick={() => handleAnswerSelect(currentQuestion.id, index)}
-                  className={`w-full text-right p-4 rounded-lg border-2 transition-all ${
+                  className={`w-full text-right p-4 rounded-lg border-2 transition-all touch-manipulation active:scale-[0.98] ${
                     isSelected
                       ? 'bg-blue-50 border-blue-600 text-blue-900'
-                      : 'bg-gray-50 border-gray-200 hover:border-blue-300 text-gray-900'
+                      : 'bg-gray-50 border-gray-200 hover:border-blue-300 active:border-blue-400 text-gray-900'
                   }`}
                 >
                   <div className="flex items-center space-x-3 space-x-reverse">
@@ -429,7 +429,7 @@ export default function QuizPage() {
           <button
             onClick={handlePrevious}
             disabled={currentQuestionIndex === 0}
-            className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse"
+            className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 active:bg-gray-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse touch-manipulation"
           >
             <ArrowRight className="w-5 h-5 rotate-180" />
             <span>السابق</span>
@@ -437,7 +437,7 @@ export default function QuizPage() {
           <button
             onClick={handleNext}
             disabled={selectedAnswer === undefined}
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold"
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold touch-manipulation"
           >
             <span>
               {currentQuestionIndex === quiz.questions.length - 1
