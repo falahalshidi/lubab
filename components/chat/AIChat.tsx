@@ -70,9 +70,9 @@ export default function AIChat({ lesson, onLessonComplete }: AIChatProps) {
   return (
     <div className="flex flex-col h-full bg-white rounded-xl shadow-lg border border-gray-200">
       {/* Chat Header */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-blue-100">
+      <div className="p-4 border-b border-gray-200 bg-gray-50">
         <div className="flex items-center space-x-3 space-x-reverse">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center shadow-lg">
               <Bot className="w-6 h-6 text-white" />
             </div>
           <div>
@@ -98,8 +98,8 @@ export default function AIChat({ lesson, onLessonComplete }: AIChatProps) {
             <div
               className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
                 message.role === 'user'
-                  ? 'bg-blue-600'
-                  : 'bg-gradient-to-br from-blue-600 to-indigo-600'
+                  ? 'bg-gray-900'
+                  : 'bg-gray-900'
               }`}
             >
               {message.role === 'user' ? (
@@ -111,7 +111,7 @@ export default function AIChat({ lesson, onLessonComplete }: AIChatProps) {
             <div
               className={`flex-1 rounded-lg p-4 ${
                 message.role === 'user'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-gray-900 text-white shadow-md'
                   : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
               }`}
             >
@@ -129,7 +129,7 @@ export default function AIChat({ lesson, onLessonComplete }: AIChatProps) {
         {/* Typing Indicator */}
         {isTyping && (
           <div className="flex items-start space-x-3 space-x-reverse">
-            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-md">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center shadow-md">
               <Bot className="w-5 h-5 text-white" />
             </div>
             <div className="bg-white rounded-lg p-4 border border-gray-200">
@@ -161,12 +161,12 @@ export default function AIChat({ lesson, onLessonComplete }: AIChatProps) {
             onKeyPress={handleKeyPress}
             placeholder="اكتب سؤالك هنا..."
             disabled={isTyping}
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
           <button
             type="submit"
             disabled={!input.trim() || isTyping}
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse shadow-lg hover:shadow-xl font-semibold"
+            className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 space-x-reverse shadow-md hover:shadow-lg font-semibold touch-manipulation"
           >
             {isTyping ? (
               <Loader2 className="w-5 h-5 animate-spin" />

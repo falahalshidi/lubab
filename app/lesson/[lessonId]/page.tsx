@@ -69,7 +69,7 @@ export default function LessonPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">جاري التحميل...</p>
         </div>
       </div>
@@ -124,21 +124,21 @@ export default function LessonPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="mb-6">
+        <div className="mb-6 sm:mb-8">
           <Link
             href={`/subject/${subject.id}`}
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4 text-sm sm:text-base"
           >
-            <ArrowRight className="w-5 h-5 ml-2 rotate-180" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 rotate-180" />
             <span>العودة للمادة</span>
           </Link>
-          <div className="flex items-center space-x-3 space-x-reverse mb-4">
-            <div className="text-3xl">{subject.icon}</div>
+          <div className="flex items-center space-x-3 sm:space-x-4 space-x-reverse mb-4">
+            <div className="text-2xl sm:text-3xl">{subject.icon}</div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">{lesson.title}</h1>
-              <p className="text-gray-600">{subject.name}</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{lesson.title}</h1>
+              <p className="text-sm sm:text-base text-gray-600">{subject.name}</p>
             </div>
             {isCompleted && (
               <div className="flex items-center space-x-2 space-x-reverse px-3 py-1 bg-green-100 text-green-700 rounded-full">
@@ -153,10 +153,10 @@ export default function LessonPage() {
           {/* Lesson Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Lesson Description */}
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md">
               <div className="flex items-center space-x-2 space-x-reverse mb-4">
-                <BookOpen className="w-6 h-6 text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">محتوى الدرس</h2>
+                <BookOpen className="w-6 h-6 text-gray-900" />
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">محتوى الدرس</h2>
               </div>
               <div className="prose prose-lg max-w-none">
                 {formatContent(lesson.content)}
@@ -165,17 +165,17 @@ export default function LessonPage() {
 
             {/* Mark Complete Button */}
             {!isCompleted && (
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">هل انتهيت من قراءة الدرس؟</h3>
-                    <p className="text-gray-600 text-sm">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 mb-2 text-base sm:text-lg">هل انتهيت من قراءة الدرس؟</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">
                       يمكنك الآن البدء بالاختبار أو طرح أسئلة على المعلّم الذكي
                     </p>
                   </div>
                   <button
                     onClick={markLessonComplete}
-                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl hover:from-green-700 hover:to-emerald-700 active:from-green-800 active:to-emerald-800 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold touch-manipulation"
+                    className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg hover:from-green-700 hover:to-emerald-700 active:from-green-800 active:to-emerald-800 transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 space-x-reverse font-semibold touch-manipulation"
                   >
                     <CheckCircle className="w-5 h-5" />
                     <span>تم الإكمال</span>
@@ -187,10 +187,10 @@ export default function LessonPage() {
             {/* Start Quiz Button */}
             <Link
               href={`/quiz/${lesson.quizId}`}
-              className="block w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center rounded-xl hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2 space-x-reverse font-bold text-lg touch-manipulation"
+              className="block w-full px-6 py-4 bg-gray-900 text-white text-center rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 space-x-reverse font-bold text-base sm:text-lg touch-manipulation"
             >
               <Play className="w-5 h-5" />
-              <span className="text-lg font-semibold">ابدأ الاختبار</span>
+              <span className="text-base sm:text-lg font-semibold">ابدأ الاختبار</span>
             </Link>
           </div>
 

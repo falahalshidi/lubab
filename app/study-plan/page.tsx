@@ -50,7 +50,7 @@ export default function StudyPlanPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">جاري التحميل...</p>
         </div>
       </div>
@@ -97,46 +97,46 @@ export default function StudyPlanPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/dashboard"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4 text-sm sm:text-base"
           >
-            <ArrowRight className="w-5 h-5 ml-2 rotate-180" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 rotate-180" />
             <span>العودة للوحة التحكم</span>
           </Link>
-          <div className="flex items-center space-x-3 space-x-reverse">
-            <Calendar className="w-8 h-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900">الخطة الدراسية</h1>
+          <div className="flex items-center space-x-3 sm:space-x-4 space-x-reverse">
+            <Calendar className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900" />
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">الخطة الدراسية</h1>
           </div>
         </div>
 
         {/* Statistics */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-xl p-6 shadow-md">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <TrendingUp className="w-8 h-8 text-blue-600" />
-              <span className="text-3xl font-bold text-blue-600">{completionRate}%</span>
+              <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900" />
+              <span className="text-2xl sm:text-3xl font-bold text-gray-900">{completionRate}%</span>
             </div>
-            <p className="text-gray-600">معدل الإنجاز</p>
+            <p className="text-sm sm:text-base text-gray-600">معدل الإنجاز</p>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-md">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-              <span className="text-3xl font-bold text-green-600">{completedCount}</span>
+              <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
+              <span className="text-2xl sm:text-3xl font-bold text-green-600">{completedCount}</span>
             </div>
-            <p className="text-gray-600">مهام مكتملة</p>
+            <p className="text-sm sm:text-base text-gray-600">مهام مكتملة</p>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-md">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-orange-600" />
-              <span className="text-3xl font-bold text-orange-600">
+              <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600" />
+              <span className="text-2xl sm:text-3xl font-bold text-orange-600">
                 {totalCount - completedCount}
               </span>
             </div>
-            <p className="text-gray-600">مهام متبقية</p>
+            <p className="text-sm sm:text-base text-gray-600">مهام متبقية</p>
           </div>
         </div>
 
@@ -147,9 +147,9 @@ export default function StudyPlanPage() {
             return (
               <div key={dateKey} className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div
-                  className={`p-4 border-b ${
+                  className={`p-4 sm:p-6 border-b ${
                     isToday(date)
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                      ? 'bg-gray-900 text-white'
                       : 'bg-gray-50 border-gray-200'
                   }`}
                 >
@@ -163,23 +163,23 @@ export default function StudyPlanPage() {
                         {getDayName(date)}
                       </h2>
                       <p
-                        className={`text-sm ${
-                          isToday(date) ? 'text-blue-100' : 'text-gray-600'
+                        className={`text-xs sm:text-sm ${
+                          isToday(date) ? 'text-gray-300' : 'text-gray-600'
                         }`}
                       >
                         {formatDate(date)}
                       </p>
                     </div>
                     {isToday(date) && (
-                      <span className="px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium">
+                      <span className="px-3 py-1 bg-white/20 text-white rounded-full text-xs sm:text-sm font-medium">
                         اليوم
                       </span>
                     )}
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="space-y-4">
+                <div className="p-4 sm:p-6">
+                  <div className="space-y-3 sm:space-y-4">
                     {items.map((item: any) => {
                       const lesson = getLessonById(item.lessonId);
                       const subject = item.subjectId
@@ -201,23 +201,23 @@ export default function StudyPlanPage() {
                               : 'bg-gray-50 border-gray-200'
                           }`}
                         >
-                          <div className="flex items-start justify-between">
-                            <div className="flex items-start space-x-4 space-x-reverse flex-1">
-                              <div className="text-3xl">{subject.icon}</div>
-                              <div className="flex-1">
-                                <div className="flex items-center space-x-2 space-x-reverse mb-2">
-                                  <h3 className="font-bold text-gray-900">{lesson.title}</h3>
+                          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div className="flex items-start space-x-3 sm:space-x-4 space-x-reverse flex-1 w-full sm:w-auto">
+                              <div className="text-2xl sm:text-3xl">{subject.icon}</div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex flex-wrap items-center gap-2 mb-2">
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900">{lesson.title}</h3>
                                   {item.completed && (
-                                    <CheckCircle className="w-5 h-5 text-green-600" />
+                                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                                   )}
                                   {item.recommended && (
-                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+                                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded">
                                       موصى به
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-sm text-gray-600 mb-2">{subject.name}</p>
-                                <div className="flex items-center space-x-4 space-x-reverse text-xs text-gray-500">
+                                <p className="text-xs sm:text-sm text-gray-600 mb-2">{subject.name}</p>
+                                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-gray-500">
                                   <span
                                     className={`px-2 py-1 rounded ${
                                       item.priority === 'high'
@@ -237,15 +237,15 @@ export default function StudyPlanPage() {
                               </div>
                             </div>
 
-                            <div className="flex items-center space-x-2 space-x-reverse">
+                            <div className="flex items-center space-x-2 space-x-reverse w-full sm:w-auto">
                               {item.completed ? (
-                                <span className="px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium text-sm">
+                                <span className="w-full sm:w-auto px-4 py-2 bg-green-100 text-green-700 rounded-lg font-medium text-xs sm:text-sm text-center">
                                   مكتمل
                                 </span>
                               ) : (
                                 <Link
                                   href={`/lesson/${lesson.id}`}
-                                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2 space-x-reverse font-semibold"
+                                  className="w-full sm:w-auto px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 space-x-reverse font-semibold text-sm sm:text-base touch-manipulation"
                                 >
                                   <BookOpen className="w-4 h-4" />
                                   <span>ابدأ</span>
@@ -265,17 +265,17 @@ export default function StudyPlanPage() {
 
         {/* Empty State */}
         {studyPlan.length === 0 && (
-          <div className="bg-white rounded-xl p-12 text-center shadow-md">
-            <Calendar className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <div className="bg-white rounded-xl p-8 sm:p-12 text-center shadow-md">
+            <Calendar className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
               لا توجد خطة دراسية حالياً
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-6">
               ابدأ بإنهاء بعض الدروس لإنشاء خطة دراسية مخصصة لك
             </p>
             <Link
               href="/dashboard"
-              className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl font-semibold"
+              className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 active:bg-gray-700 transition-all shadow-md hover:shadow-lg font-semibold text-sm sm:text-base touch-manipulation"
             >
               ابدأ التعلم
             </Link>
