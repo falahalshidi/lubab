@@ -74,6 +74,30 @@ lubab/
 └── types/                # أنواع TypeScript
 ```
 
+## النشر على Netlify
+
+### الطريقة الأولى: عبر Netlify Dashboard
+1. ارفع المشروع على GitHub/GitLab/Bitbucket
+2. اذهب إلى [Netlify](https://app.netlify.com)
+3. اضغط على "New site from Git"
+4. اختر المستودع الخاص بك
+5. الإعدادات:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `.next`
+6. اضغط "Deploy site"
+
+### الطريقة الثانية: عبر Netlify CLI
+```bash
+npm install -g netlify-cli
+netlify deploy --prod
+```
+
+### ملاحظات مهمة للنشر:
+- ✅ تم إضافة `netlify.toml` مع الإعدادات الصحيحة
+- ✅ تم تثبيت `@netlify/plugin-nextjs` تلقائياً
+- ✅ تم ضبط `next.config.ts` ليعمل مع Netlify
+- ✅ تم إضافة حماية لـ localStorage في جميع الوظائف
+
 ## ملاحظات
 
 - جميع البيانات محفوظة في LocalStorage (لا يوجد backend)

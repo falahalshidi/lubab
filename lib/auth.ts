@@ -12,13 +12,19 @@ export interface AuthState {
 
 // تسجيل الدخول
 export function login(email: string, password: string): User | null {
+  if (typeof window === 'undefined') return null;
+  
   const user = demoUsers.find(
     (u) => u.email === email && u.password === password
   );
 
   if (user) {
     // حفظ في localStorage
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    } catch (e) {
+      console.error('Error saving to localStorage:', e);
+    }
     return user;
   }
 
@@ -27,7 +33,14 @@ export function login(email: string, password: string): User | null {
 
 // تسجيل الخروج
 export function logout(): void {
-  localStorage.removeItem(STORAGE_KEY);
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(PROGRESS_KEY);
+    localStorage.removeItem(STUDENT_SETUP_KEY);
+  } catch (e) {
+    console.error('Error removing from localStorage:', e);
+  }
 }
 
 // الحصول على المستخدم الحالي
@@ -52,7 +65,11 @@ export function isAuthenticated(): boolean {
 // حفظ التقدم
 export function saveProgress(progress: any): void {
   if (typeof window === 'undefined') return;
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+  try {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+  } catch (e) {
+    console.error('Error saving progress to localStorage:', e);
+  }
 }
 
 // الحصول على التقدم
@@ -93,13 +110,17 @@ export function initializeProgress(studentId: string) {
 // حفظ إعدادات الطالب
 export function saveStudentSetup(setup: { name: string; gradeId: string; subjectIds: string[] }): void {
   if (typeof window === 'undefined') return;
-  localStorage.setItem(STUDENT_SETUP_KEY, JSON.stringify(setup));
-  
-  // تحديث اسم المستخدم
-  const user = getCurrentUser();
-  if (user) {
-    user.name = setup.name;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+  try {
+    localStorage.setItem(STUDENT_SETUP_KEY, JSON.stringify(setup));
+    
+    // تحديث اسم المستخدم
+    const user = getCurrentUser();
+    if (user) {
+      user.name = setup.name;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    }
+  } catch (e) {
+    console.error('Error saving student setup to localStorage:', e);
   }
 }
 
