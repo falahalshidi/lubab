@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# لُباب - المعلّم الشخصي بالذكاء الاصطناعي
 
-## Getting Started
+منصة تعليمية ذكية تعمل كمعلّم شخصي لكل طالب. تشرح الدروس حسب مستوى الطالب، تختبره تلقائياً، تكتشف نقاط الضعف، وتبني خطة مذاكرة مخصصة.
 
-First, run the development server:
+## المميزات
+
+- ✅ شرح ذكي مخصص لكل طالب
+- ✅ اختبارات تكيفية تكتشف نقاط الضعف
+- ✅ خطة مذاكرة أسبوعية مخصصة
+- ✅ لوحة تحكم لولي الأمر مع تقارير مفصلة
+- ✅ محاكاة ذكاء اصطناعي للشرح والإجابة على الأسئلة
+
+## التقنيات المستخدمة
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Lucide React** للأيقونات
+
+## البدء
+
+### التثبيت
+
+```bash
+npm install
+```
+
+### التشغيل
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+افتح [http://localhost:3000](http://localhost:3000) في المتصفح.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## الحسابات التجريبية
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### طالب
+- البريد: `student@demo.com`
+- كلمة المرور: `123456`
 
-## Learn More
+### ولي أمر
+- البريد: `parent@demo.com`
+- كلمة المرور: `123456`
 
-To learn more about Next.js, take a look at the following resources:
+## البيانات
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+جميع البيانات هي بيانات ديمو تجريبية:
+- **الصف الخامس** فقط (باقي الصفوف قريباً)
+- **3 مواد**: الرياضيات، العلوم، اللغة العربية
+- **9 دروس** إجمالاً (3 دروس لكل مادة)
+- **9 اختبارات** (اختبار لكل درس)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## البنية
 
-## Deploy on Vercel
+```
+lubab/
+├── app/                    # صفحات Next.js
+│   ├── page.tsx           # الصفحة الرئيسية
+│   ├── login/             # تسجيل الدخول
+│   ├── dashboard/         # لوحة تحكم الطالب
+│   ├── subject/           # صفحات المواد
+│   ├── lesson/            # صفحات الدروس
+│   ├── quiz/              # صفحات الاختبارات
+│   ├── study-plan/        # الخطة الدراسية
+│   └── parent/            # لوحة ولي الأمر
+├── components/            # المكونات
+│   ├── dashboard/         # مكونات لوحة التحكم
+│   └── chat/              # مكون المحادثة AI
+├── lib/                   # المكتبات والوظائف
+│   ├── data.ts           # بيانات ديمو
+│   ├── auth.ts           # نظام المصادقة
+│   └── ai-simulator.ts   # محاكاة AI
+└── types/                # أنواع TypeScript
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ملاحظات
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- جميع البيانات محفوظة في LocalStorage (لا يوجد backend)
+- محاكاة AI مبرمجة مسبقاً (ليست AI حقيقي)
+- الموقع بالكامل يدعم RTL والعربية
+
+## التطوير المستقبلي
+
+- [ ] إضافة المزيد من الصفوف والمواد
+- [ ] ربط مع AI حقيقي (OpenAI/Claude)
+- [ ] إضافة نظام نقاط وجوائز
+- [ ] إضافة ميزة المذاكرة الجماعية
+- [ ] تطبيق موبايل
+
+---
+
+صُنع بـ ❤️ للمستقبل التعليمي
